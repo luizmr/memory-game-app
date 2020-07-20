@@ -1,0 +1,119 @@
+/* variables */
+:root {
+    /* colors */
+    --main-color: #f92131;
+    --secondary-color: #b31217;
+    --active-color: #fff8fa;
+    --main-font-color: #fff8fa;
+    --cube-color: #b31217;
+    --correct-color: #fc4c62;
+    /* fonts */
+    --title-font-size: 70px;
+    /* sizes */
+    --container-width: 350px;
+    --container-height: 350px;
+}
+
+/* global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    font-family: "Orbitron", sans-serif;
+    background: var(--main-color);
+}
+h1 {
+    font-size: 2.5rem;
+    letter-spacing: 0.2rem;
+}
+h2 {
+    color: white;
+    z-index: 10;
+    position: absolute;
+    top: 15%;
+    font-size: 3rem;
+    letter-spacing: 0.2rem;
+}
+
+/* game classes */
+.game-container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--main-font-color);
+    border-radius: 50px;
+    background-color: var(--main-color);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: var(--container-width);
+    height: var(--container-height);
+    padding: 20px;
+    box-shadow: inset 0 0 0 15px var(--active-color),
+        inset 0 0 20px 20px rgba(102, 0, 0, 0.5);
+}
+
+@media (max-width: 500px) {
+    h2 {
+        top: 10%;
+        font-size: 2rem;
+        margin: 0 5%;
+        text-align: center;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    .game-container {
+        max-width: 300px;
+        max-height: 300px;
+        margin: 0 auto;
+    }
+}
+
+.game-cube {
+    background-color: var(--cube-color);
+    margin: 5px;
+    min-width: 25%;
+    min-height: 25%;
+    border-radius: 400px;
+}
+
+.active {
+    cursor: grab;
+    background: var(--active-color);
+    box-shadow: -2px -2px 2px 2px rgba(255, 231, 231, 0.3),
+        2px 2px 2px 2px rgba(102, 0, 0, 0.5);
+}
+
+.correct {
+    background-color: var(--correct-color);
+    box-shadow: none;
+}
+.hidden {
+    display: none !important;
+}
+.restart-btn {
+    border-radius: 5px;
+    border: none;
+    background-color: var(--active-color);
+    color: var(--main-color);
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    padding: 5px 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.restart-btn:hover {
+    transform: scale(1.1);
+}
